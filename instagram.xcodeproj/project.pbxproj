@@ -15,6 +15,7 @@
 		1B6E1D63203B911B006840A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E1D61203B911B006840A5 /* LaunchScreen.storyboard */; };
 		1B6E1D6E203B911B006840A5 /* instagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E1D6D203B911B006840A5 /* instagramTests.swift */; };
 		1B6E1D79203B911B006840A5 /* instagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E1D78203B911B006840A5 /* instagramUITests.swift */; };
+		1BC2283C203E36A700D17E56 /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC2283B203E36A700D17E56 /* HomeFeedViewController.swift */; };
 		473C06020F7A218EDE6CD0D9 /* Pods_instagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DFBF8390DAA37DE1264A6E /* Pods_instagramTests.framework */; };
 		66D0663C21AFBBC0D74D3F2C /* Pods_instagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A8F4D62927F2BE378603C3 /* Pods_instagramUITests.framework */; };
 		8993F199203D0A36002A477E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8993F198203D0A36002A477E /* LoginViewController.swift */; };
@@ -52,6 +53,7 @@
 		1B6E1D74203B911B006840A5 /* instagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6E1D78203B911B006840A5 /* instagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramUITests.swift; sourceTree = "<group>"; };
 		1B6E1D7A203B911B006840A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC2283B203E36A700D17E56 /* HomeFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
 		3354827A4A74BA7323DCE75D /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		4971CDEDD56CD4FCAA974EFA /* Pods_instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55713D451665F969B6DD936E /* Pods-instagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instagramTests/Pods-instagramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,13 +118,14 @@
 		1B6E1D57203B911B006840A5 /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				1BC2283A203E363000D17E56 /* Views */,
+				1BC22839203E362300D17E56 /* View Controllers */,
 				1B6E1D58203B911B006840A5 /* AppDelegate.swift */,
 				1B6E1D5A203B911B006840A5 /* ViewController.swift */,
 				1B6E1D5C203B911B006840A5 /* Main.storyboard */,
 				1B6E1D5F203B911B006840A5 /* Assets.xcassets */,
 				1B6E1D61203B911B006840A5 /* LaunchScreen.storyboard */,
 				1B6E1D64203B911B006840A5 /* Info.plist */,
-				8993F198203D0A36002A477E /* LoginViewController.swift */,
 			);
 			path = instagram;
 			sourceTree = "<group>";
@@ -143,6 +146,22 @@
 				1B6E1D7A203B911B006840A5 /* Info.plist */,
 			);
 			path = instagramUITests;
+			sourceTree = "<group>";
+		};
+		1BC22839203E362300D17E56 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8993F198203D0A36002A477E /* LoginViewController.swift */,
+				1BC2283B203E36A700D17E56 /* HomeFeedViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1BC2283A203E363000D17E56 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		865062CA1E68AE9E2168AB0E /* Pods */ = {
@@ -452,6 +471,7 @@
 				8993F199203D0A36002A477E /* LoginViewController.swift in Sources */,
 				1B6E1D5B203B911B006840A5 /* ViewController.swift in Sources */,
 				1B6E1D59203B911B006840A5 /* AppDelegate.swift in Sources */,
+				1BC2283C203E36A700D17E56 /* HomeFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
