@@ -29,6 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
+        // check if user is logged in.
+        if PFUser.current() != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // view controller currently being set in Storyboard as default will be overridden
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "homeFeed")
+        }
+        
+        //Called when the user is login out
         NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in
             print("Logout notification received")
             self.logOut()
@@ -46,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Successful loggout")
                 // Load and show the login view controller
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let loginViewController = storyboard.instantiateViewController(withIdentifier: "logoutView")
+                let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginView")
                 self.window?.rootViewController = loginViewController
             }
         })

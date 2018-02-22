@@ -23,7 +23,6 @@ class HomeFeedViewController: UIViewController {
     
     
     @IBAction func logoutButton(_ sender: Any) {
-        print("Pused logout button")
         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
     }
     
