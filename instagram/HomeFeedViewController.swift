@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class HomeFeedViewController: UIViewController {
 
+    var posts: [Post]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
