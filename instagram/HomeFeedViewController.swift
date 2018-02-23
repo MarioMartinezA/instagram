@@ -13,17 +13,30 @@ import ParseUI
 class HomeFeedViewController: UIViewController, UITableViewDataSource  {
 
     var posts: [Post]! = []
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HomeFeedViewController.didPullToRefresh(_:)), for: UIControlEvents.valueChanged)
+        // add refresh control to table view
+        tableView.insertSubview(refreshControl, at: 0)
         
-
         // Do any additional setup after loading the view.
-        
+        tableView.dataSource = self
+
+        fetchPosts()
+
+    }
+    
+    func didPullToRefresh(_ refreshControl: UIRefreshControl) {
+        fetchPosts()
+    }
+    
+    func fetchPosts() {
         let query = Post.query()!
         //let query = PFQuery(className: "Post")
         query.order(byDescending: "createdAt")
@@ -40,18 +53,18 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource  {
                 }
                 self.posts = posts as! [Post]
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             } else {
                 // handle error
             }
+            
         })
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func logoutButton(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
@@ -65,20 +78,13 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource  {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         
-        
         cell.captionLabel.text = posts[indexPath.row].caption
-        
-        //cell.photoImageView.image = posts[indexPath.row].media as? P
-        //cell.photoImageView.loadInBackground()
-        
-
-                cell.photoImageView.file = posts[indexPath.row].media as? PFFile
-                cell.photoImageView.loadInBackground()
- 
-        
+        cell.photoImageView.file = posts[indexPath.row].media
+        cell.photoImageView.loadInBackground()
         
         return cell
     }
+    
 
     /*
     // MARK: - Navigation

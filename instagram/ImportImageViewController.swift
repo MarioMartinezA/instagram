@@ -18,12 +18,7 @@ class ImportImageViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let vc = UIImagePickerController()
-        vc.delegate = self
-        //vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
-        self.present(vc, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +67,16 @@ class ImportImageViewController: UIViewController, UIImagePickerControllerDelega
         return newImage!
     }
 
+    @IBAction func importImage(_ sender: UITapGestureRecognizer) {
+        print("Button pressed")
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        //vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
