@@ -36,6 +36,7 @@ class Post: PFObject, PFSubclassing {
         // use subclass approach
         let post = Post()
         
+        
         // Add relevant fields to the object
         post.media = getPFFileFromImage(image: image)! // PFFile column type
         post.author = PFUser.current()! // Pointer column type that points to PFUser
@@ -64,4 +65,7 @@ class Post: PFObject, PFSubclassing {
         }
         return nil
     }
+    
+    
+    
 }
