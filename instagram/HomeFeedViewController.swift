@@ -39,7 +39,7 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource  {
     func fetchPosts() {
         let query = Post.query()!
         query.includeKey("author")
-        
+        query.order(byDescending: "_created_at")
         query.limit = 20
         
         // fetch data asynchronously

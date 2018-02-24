@@ -36,15 +36,23 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-1y-5x6">
-                                <rect key="frame" x="84" y="290" width="208" height="30"/>
+                                <rect key="frame" x="84" y="290" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lF0-f0-IV3"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="LQW-oK-ls0">
+                                <rect key="frame" x="0.0" y="3" width="375" height="129"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="trf-ib-aLF">
+                                <rect key="frame" x="20" y="1" width="337" height="135"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdx-OV-7Bl">
-                                <rect key="frame" x="84" y="342" width="208" height="30"/>
+                                <rect key="frame" x="217" y="290" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -291,7 +299,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="download" width="369" height="136"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="title" width="337" height="135"/>
     </resources>
 </document>
