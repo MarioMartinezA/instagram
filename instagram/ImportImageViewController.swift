@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class ImportImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -48,11 +49,14 @@ class ImportImageViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func shareButton(_ sender: Any) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         Post.postUserImage(image: selectedImageView.image, withCaption: captionText.text) { (success, error) in
             print("File sent")
+            MBProgressHUD.hide(for: self.view, animated: true)
             self.dismiss(animated: true, completion: nil)
             
         }
+        
     }
 
     func resize(image: UIImage, newSize: CGSize) -> UIImage {

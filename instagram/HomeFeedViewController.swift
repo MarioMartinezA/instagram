@@ -38,19 +38,14 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource  {
     
     func fetchPosts() {
         let query = Post.query()!
-        //let query = PFQuery(className: "Post")
-        query.order(byDescending: "createdAt")
         query.includeKey("author")
+        
         query.limit = 20
         
         // fetch data asynchronously
         query.findObjectsInBackground(block: { (posts : [PFObject]?, error: Error?) -> Void in
             
             if let posts = posts {
-                // do something with the data fetched
-                for post in posts {
-                    print(post["caption"])
-                }
                 self.posts = posts as! [Post]
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
@@ -86,6 +81,16 @@ class HomeFeedViewController: UIViewController, UITableViewDataSource  {
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let cell = sender as? UITableViewCell {
+            if let indexPath = tableView.indexPath(for: cell) {
+                let post = posts[indexPath.row]
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.post = post
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

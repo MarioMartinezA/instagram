@@ -104,6 +104,7 @@
                                         <connections>
                                             <outlet property="captionLabel" destination="2nF-Xb-2tu" id="Uts-dZ-Auj"/>
                                             <outlet property="photoImageView" destination="3HA-UF-7cI" id="phA-Q7-Gho"/>
+                                            <segue destination="ZZD-FH-px8" kind="show" identifier="detailView" id="DbQ-7o-chm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -224,6 +225,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2q-YJ-Rda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="877.60000000000002" y="123.68815592203899"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="1Hu-he-c3p">
+            <objects>
+                <viewController id="ZZD-FH-px8" customClass="DetailViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ody-Iw-q6z"/>
+                        <viewControllerLayoutGuide type="bottom" id="nbV-Kd-Pbp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KnU-NL-0Yf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1k-PS-3H0">
+                                <rect key="frame" x="143" y="244" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1a-dQ-YmQ">
+                                <rect key="frame" x="77" y="331" width="220" height="258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018-02-23 23:15:41 +0000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rET-xe-LAP">
+                                <rect key="frame" x="77" y="273" width="220" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionText" destination="K1a-dQ-YmQ" id="PqF-3T-ykw"/>
+                        <outlet property="dateText" destination="rET-xe-LAP" id="EZh-jP-axq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8VR-Ua-SbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2645.5999999999999" y="-560.86956521739137"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JzK-rr-gqj">
